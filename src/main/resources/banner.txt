@@ -1,0 +1,38 @@
+
+
+BBBBBBBBBBBBBBBBB      SSSSSSSSSSSSSSS      tttt                                    tttt
+B::::::::::::::::B   SS:::::::::::::::S  ttt:::t                                 ttt:::t
+B::::::BBBBBB:::::B S:::::SSSSSS::::::S  t:::::t                                 t:::::t
+BB:::::B     B:::::BS:::::S     SSSSSSS  t:::::t                                 t:::::t
+  B::::B     B:::::BS:::::S        ttttttt:::::ttttttt      aaaaaaaaaaaaa  ttttttt:::::ttttttt
+  B::::B     B:::::BS:::::S        t:::::::::::::::::t      a::::::::::::a t:::::::::::::::::t
+  B::::BBBBBB:::::B  S::::SSSS     t:::::::::::::::::t      aaaaaaaaa:::::at:::::::::::::::::t
+  B:::::::::::::BB    SS::::::SSSSStttttt:::::::tttttt               a::::atttttt:::::::tttttt
+  B::::BBBBBB:::::B     SSS::::::::SS    t:::::t              aaaaaaa:::::a      t:::::t
+  B::::B     B:::::B       SSSSSS::::S   t:::::t            aa::::::::::::a      t:::::t
+  B::::B     B:::::B            S:::::S  t:::::t           a::::aaaa::::::a      t:::::t
+  B::::B     B:::::B            S:::::S  t:::::t    tttttta::::a    a:::::a      t:::::t    tttttt
+BB:::::BBBBBB::::::BSSSSSSS     S:::::S  t::::::tttt:::::ta::::a    a:::::a      t::::::tttt:::::t
+B:::::::::::::::::B S::::::SSSSSS:::::S  tt::::::::::::::ta:::::aaaa::::::a      tt::::::::::::::t
+B::::::::::::::::B  S:::::::::::::::SS     tt:::::::::::tt a::::::::::aa:::a       tt:::::::::::tt
+BBBBBBBBBBBBBBBBB    SSSSSSSSSSSSSSS         ttttttttttt    aaaaaaaaaa  aaaa         ttttttttttt
+
+
+
+                    IIIIIIIIIIMMMMMMMM               MMMMMMMM   SSSSSSSSSSSSSSS
+                    I::::::::IM:::::::M             M:::::::M SS:::::::::::::::S
+                    I::::::::IM::::::::M           M::::::::MS:::::SSSSSS::::::S
+                    II::::::IIM:::::::::M         M:::::::::MS:::::S     SSSSSSS
+                      I::::I  M::::::::::M       M::::::::::MS:::::S
+                      I::::I  M:::::::::::M     M:::::::::::MS:::::S
+                      I::::I  M:::::::M::::M   M::::M:::::::M S::::SSSS
+                      I::::I  M::::::M M::::M M::::M M::::::M  SS::::::SSSSS
+                      I::::I  M::::::M  M::::M::::M  M::::::M    SSS::::::::SS
+                      I::::I  M::::::M   M:::::::M   M::::::M       SSSSSS::::S
+                      I::::I  M::::::M    M:::::M    M::::::M            S:::::S
+                      I::::I  M::::::M     MMMMM     M::::::M            S:::::S
+                    II::::::IIM::::::M               M::::::MSSSSSSS     S:::::S
+                    I::::::::IM::::::M               M::::::MS::::::SSSSSS:::::S
+                    I::::::::IM::::::M               M::::::MS:::::::::::::::SS
+                    IIIIIIIIIIMMMMMMMM               MMMMMMMM SSSSSSSSSSSSSSS
+
