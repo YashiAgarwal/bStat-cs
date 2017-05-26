@@ -1,12 +1,9 @@
 package bStat.CS.com.bootstrap;
 
-import bStat.CS.com.common.models.tables.HierarchyNodes;
-import bStat.CS.com.common.models.tables.Products;
-import bStat.CS.com.common.models.tables.ProductsGroup;
-import bStat.CS.com.common.models.tables.ProductsHierarchy;
+import bStat.CS.com.common.models.tables.*;
 import bStat.CS.com.common.utils.GuiceInjector;
 import bStat.CS.com.config.CSConfiguration;
-import bStat.CS.com.resources.CSResource;
+import bStat.CS.com.resources.DataResource;
 import com.codahale.metrics.JmxReporter;
 import com.codahale.metrics.MetricRegistry;
 import com.google.inject.Guice;
@@ -16,6 +13,8 @@ import io.dropwizard.db.DataSourceFactory;
 import io.dropwizard.hibernate.HibernateBundle;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
+import io.federecio.dropwizard.swagger.SwaggerBundle;
+import io.federecio.dropwizard.swagger.SwaggerBundleConfiguration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -33,7 +32,7 @@ public class CSApplication extends Application<CSConfiguration> {
     }
 
     private final HibernateBundle<CSConfiguration> hibernate = new HibernateBundle<CSConfiguration>(HierarchyNodes.class,
-            Products.class, ProductsGroup.class, ProductsHierarchy.class) {
+            Products.class, ProductsGroup.class, ProductsHierarchy.class, ServiceItems.class) {
         @Override
         public DataSourceFactory getDataSourceFactory(CSConfiguration csConfiguration) {
             logger.info("Configuring database ...");
@@ -45,6 +44,14 @@ public class CSApplication extends Application<CSConfiguration> {
     @Override
     public void initialize(Bootstrap<CSConfiguration> bootstrap) {
         bootstrap.addBundle(hibernate);
+
+
+        bootstrap.addBundle(new SwaggerBundle<CSConfiguration>() {
+            @Override
+            public SwaggerBundleConfiguration getSwaggerBundleConfiguration(CSConfiguration configuration) {
+                return configuration.getSwagger();
+            }
+        });
     }
 
     @Override
@@ -61,7 +68,7 @@ public class CSApplication extends Application<CSConfiguration> {
         GuiceInjector.assignInjector(injector);
 
         //------- registering app resources -----------
-        environment.jersey().register(injector.getInstance(CSResource.class));
+        environment.jersey().register(injector.getInstance(DataResource.class));
 
         environment.lifecycle().manage(injector.getInstance(CSManagedService.class));
     }
