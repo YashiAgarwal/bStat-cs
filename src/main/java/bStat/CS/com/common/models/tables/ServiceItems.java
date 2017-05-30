@@ -37,9 +37,6 @@ import java.util.Date;
     @JsonProperty("customer_id")
     private long customerId;
 
-    @JsonProperty("service_type_id")
-    private long serviceTypeId;
-
     @Column(name = "created_on")
     private Date createdOn;
 
@@ -59,7 +56,7 @@ import java.util.Date;
     }
 
     public ServiceItems(long productId, String description, String title, ServiceType serviceType,
-                        double priceForFreeService, long customerId, long serviceTypeId, Date createdOn,
+                        double priceForFreeService, long customerId, Date createdOn,
                         Date modifiedOn, int countOfFreeServices, String periodOfService, int priceForPaidService) {
         this.productId = productId;
         this.description = description;
@@ -67,7 +64,6 @@ import java.util.Date;
         this.serviceType = serviceType;
         this.priceForFreeService = priceForFreeService;
         this.customerId = customerId;
-        this.serviceTypeId = serviceTypeId;
         this.createdOn = createdOn;
         this.modifiedOn = modifiedOn;
         this.countOfFreeServices = countOfFreeServices;
@@ -129,14 +125,6 @@ import java.util.Date;
 
     public void setCustomerId(long customerId) {
         this.customerId = customerId;
-    }
-
-    public long getServiceTypeId() {
-        return serviceTypeId;
-    }
-
-    public void setServiceTypeId(long serviceTypeId) {
-        this.serviceTypeId = serviceTypeId;
     }
 
     public Date getCreatedOn() {

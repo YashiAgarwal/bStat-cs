@@ -27,6 +27,9 @@ public class Products {
     @JsonProperty("category_child_id")
     private long categoryChildId;
 
+    @JsonProperty("vertical_id")
+    private long verticalId;
+
     @JsonProperty("image_url")
     private String imageUrl;
 
@@ -55,11 +58,13 @@ public class Products {
     public Products() {
     }
 
-    public Products(String title, long categoryId, long categoryChildId, String imageUrl, String warrantyPeriod,
-                    double sellingPrice, double MRP, TradeCategory tradeCategory, boolean listing, Date createdOn, Date modifiedOn) {
+    public Products(String title, long categoryId, long categoryChildId, long verticalId, String imageUrl,
+                    String warrantyPeriod, double sellingPrice, double MRP, TradeCategory tradeCategory,
+                    boolean listing, Date createdOn, Date modifiedOn) {
         this.title = title;
         this.categoryId = categoryId;
         this.categoryChildId = categoryChildId;
+        this.verticalId = verticalId;
         this.imageUrl = imageUrl;
         this.warrantyPeriod = warrantyPeriod;
         this.sellingPrice = sellingPrice;
@@ -100,6 +105,14 @@ public class Products {
 
     public void setCategoryChildId(long categoryChildId) {
         this.categoryChildId = categoryChildId;
+    }
+
+    public long getVerticalId() {
+        return verticalId;
+    }
+
+    public void setVerticalId(long verticalId) {
+        this.verticalId = verticalId;
     }
 
     public String getImageUrl() {
