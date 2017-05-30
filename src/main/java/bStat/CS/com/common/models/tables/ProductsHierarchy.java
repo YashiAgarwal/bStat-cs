@@ -1,5 +1,6 @@
 package bStat.CS.com.common.models.tables;
 
+import bStat.CS.com.common.enums.NodeType;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.persistence.*;
@@ -23,19 +24,20 @@ public class ProductsHierarchy {
     @JsonProperty("child_node_id")
     private long childNodeId;
 
-    @JsonProperty("group_id")
-    private long groupId;
+    @JsonProperty("vertical_id")
+    private long verticalId;
 
     @JsonProperty("node_type")
-    private long nodeType;      //TODO
+    @Enumerated(EnumType.STRING)
+    private NodeType nodeType;
 
     public ProductsHierarchy() {
     }
 
-    public ProductsHierarchy(long parentNodeId, long childNodeId, long groupId, long nodeType) {
+    public ProductsHierarchy(long parentNodeId, long childNodeId, long verticalId, NodeType nodeType) {
         this.parentNodeId = parentNodeId;
         this.childNodeId = childNodeId;
-        this.groupId = groupId;
+        this.verticalId = verticalId;
         this.nodeType = nodeType;
     }
 
@@ -55,19 +57,19 @@ public class ProductsHierarchy {
         this.childNodeId = childNodeId;
     }
 
-    public long getGroupId() {
-        return groupId;
+    public long getVerticalId() {
+        return verticalId;
     }
 
-    public void setGroupId(long groupId) {
-        this.groupId = groupId;
+    public void setVerticalId(long verticalId) {
+        this.verticalId = verticalId;
     }
 
-    public long getNodeType() {
+    public NodeType getNodeType() {
         return nodeType;
     }
 
-    public void setNodeType(long nodeType) {
+    public void setNodeType(NodeType nodeType) {
         this.nodeType = nodeType;
     }
 }

@@ -40,6 +40,7 @@ public class Products {
     private double MRP;
 
     @Column(name = "trade_category")
+    @Enumerated(EnumType.STRING)
     private TradeCategory tradeCategory;
 
     @JsonProperty("listing")

@@ -17,7 +17,7 @@ public class ProductVerticals {
     private long verticalId;
 
     @JsonProperty("start_category_node")
-    private String startCategoryNode;
+    private long startCategoryNode;
 
     @JsonProperty("vertical_name")
     private String verticalName;
@@ -28,7 +28,7 @@ public class ProductVerticals {
     public ProductVerticals() {
     }
 
-    public ProductVerticals(long verticalId, String startNode, String groupName, String description) {
+    public ProductVerticals(long verticalId, long startNode, String groupName, String description) {
         this.verticalId = verticalId;
         this.startCategoryNode = startNode;
         this.verticalName = groupName;
@@ -43,11 +43,11 @@ public class ProductVerticals {
         this.verticalId = verticalId;
     }
 
-    public String getStartNode() {
+    public long getStartNode() {
         return startCategoryNode;
     }
 
-    public void setStartNode(String startNode) {
+    public void setStartNode(long startNode) {
         this.startCategoryNode = startNode;
     }
 

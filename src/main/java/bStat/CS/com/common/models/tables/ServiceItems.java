@@ -1,5 +1,6 @@
 package bStat.CS.com.common.models.tables;
 
+import bStat.CS.com.common.enums.ServiceType;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.persistence.*;
@@ -27,10 +28,11 @@ import java.util.Date;
     private String title;
 
     @JsonProperty("service_type")
-    private String serviceType;
+    @Enumerated(EnumType.STRING)
+    private ServiceType serviceType;
 
     @JsonProperty("price_for_free_service")
-    private String priceForFreeService;
+    private double priceForFreeService;
 
     @JsonProperty("customer_id")
     private long customerId;
@@ -48,18 +50,17 @@ import java.util.Date;
     private int countOfFreeServices;
 
     @JsonProperty("period_of_service")
-    private int periodOfService;
+    private String periodOfService;
 
     @JsonProperty("price_for_paid_service")
-    private int priceForPaidService;
+    private double priceForPaidService;
 
     public ServiceItems() {
     }
 
-    public ServiceItems(long id, long productId, String description, String title, String serviceType,
-                        String priceForFreeService, long customerId, long serviceTypeId, Date createdOn, Date modifiedOn,
-                        int countOfFreeServices, int periodOfService, int priceForPaidService) {
-        this.id = id;
+    public ServiceItems(long productId, String description, String title, ServiceType serviceType,
+                        double priceForFreeService, long customerId, long serviceTypeId, Date createdOn,
+                        Date modifiedOn, int countOfFreeServices, String periodOfService, int priceForPaidService) {
         this.productId = productId;
         this.description = description;
         this.title = title;
@@ -106,19 +107,19 @@ import java.util.Date;
         this.title = title;
     }
 
-    public String getServiceType() {
+    public ServiceType getServiceType() {
         return serviceType;
     }
 
-    public void setServiceType(String serviceType) {
+    public void setServiceType(ServiceType serviceType) {
         this.serviceType = serviceType;
     }
 
-    public String getPriceForFreeService() {
+    public double getPriceForFreeService() {
         return priceForFreeService;
     }
 
-    public void setPriceForFreeService(String priceForFreeService) {
+    public void setPriceForFreeService(double priceForFreeService) {
         this.priceForFreeService = priceForFreeService;
     }
 
@@ -162,15 +163,15 @@ import java.util.Date;
         this.countOfFreeServices = countOfFreeServices;
     }
 
-    public int getPeriodOfService() {
+    public String getPeriodOfService() {
         return periodOfService;
     }
 
-    public void setPeriodOfService(int periodOfService) {
+    public void setPeriodOfService(String periodOfService) {
         this.periodOfService = periodOfService;
     }
 
-    public int getPriceForPaidService() {
+    public double getPriceForPaidService() {
         return priceForPaidService;
     }
 
