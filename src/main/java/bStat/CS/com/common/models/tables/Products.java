@@ -1,5 +1,6 @@
 package bStat.CS.com.common.models.tables;
 
+import bStat.CS.com.common.enums.TradeCategory;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.persistence.*;
@@ -14,50 +15,35 @@ public class Products {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    private long id;
+    @Column(name = "product_id")
+    private long productId;
 
-    @JsonProperty("trade_category")
-    private String tradeCategory;   //TODO
+    @JsonProperty("title")
+    private String title;
 
-    @JsonProperty("name")
-    private String name;
+    @JsonProperty("category_id")
+    private long categoryId;
 
-    @JsonProperty("description")
-    private String description;
+    @JsonProperty("category_child_id")
+    private long categoryChildId;
 
-    @JsonProperty("vertical_id")
-    private long veticalId;
+    @JsonProperty("image_url")
+    private String imageUrl;
 
-    @JsonProperty("ideal_weight")
-    private int idealWeight;
-
-    @JsonProperty("ideal_length")
-    private int idealLength;
-
-    @Column(name = "ideal_breadth")
-    private int idealBreadth;
-
-    @Column(name = "ideal_width")
-    private int idealWidth;
+    @JsonProperty("warranty_period")
+    private String warrantyPeriod;
 
     @Column(name = "selling_price")
-    private int sellingPrice;
+    private double sellingPrice;
 
-    @Column(name = "is_direct__price")
-    private boolean isDirectPrice;
+    @Column(name = "MRP")
+    private double MRP;
 
-    @JsonProperty("formula_id")
-    private long formulaId;
+    @Column(name = "trade_category")
+    private TradeCategory tradeCategory;
 
-    @Column(name = "dimension_unit")
-    private int dimensionUnit;
-
-    @Column(name = "weight_unit")
-    private int weightUnit;
-
-    @Column(name = "is_active")
-    private boolean isActive;
+    @JsonProperty("listing")
+    private boolean listing;    // active or inactive
 
     @Column(name = "created_on")
     private Date createdOn;
@@ -68,67 +54,99 @@ public class Products {
     public Products() {
     }
 
-    public Products(long id, String tradeCategory, String name, String description, long groupId,
-                    Date createdOn, Date modifiedOn, int idealWeight, int idealLength, int idealBreadth,
-                    int idealWidth, int sellingPrice, boolean isDirectPrice, long formulaId, int dimensionUnit,
-                    int weightUnit, boolean isActive) {
-        this.id = id;
+    public Products(String title, long categoryId, long categoryChildId, String imageUrl, String warrantyPeriod,
+                    double sellingPrice, double MRP, TradeCategory tradeCategory, boolean listing, Date createdOn, Date modifiedOn) {
+        this.title = title;
+        this.categoryId = categoryId;
+        this.categoryChildId = categoryChildId;
+        this.imageUrl = imageUrl;
+        this.warrantyPeriod = warrantyPeriod;
+        this.sellingPrice = sellingPrice;
+        this.MRP = MRP;
         this.tradeCategory = tradeCategory;
-        this.name = name;
-        this.description = description;
-        this.veticalId = groupId;
+        this.listing = listing;
         this.createdOn = createdOn;
         this.modifiedOn = modifiedOn;
-        this.idealWeight = idealWeight;
-        this.idealLength = idealLength;
-        this.idealBreadth = idealBreadth;
-        this.idealWidth = idealWidth;
+    }
+
+    public long getProductId() {
+        return productId;
+    }
+
+    public void setProductId(long productId) {
+        this.productId = productId;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public long getCategoryId() {
+        return categoryId;
+    }
+
+    public void setCategoryId(long categoryId) {
+        this.categoryId = categoryId;
+    }
+
+    public long getCategoryChildId() {
+        return categoryChildId;
+    }
+
+    public void setCategoryChildId(long categoryChildId) {
+        this.categoryChildId = categoryChildId;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
+    public String getWarrantyPeriod() {
+        return warrantyPeriod;
+    }
+
+    public void setWarrantyPeriod(String warrantyPeriod) {
+        this.warrantyPeriod = warrantyPeriod;
+    }
+
+    public double getSellingPrice() {
+        return sellingPrice;
+    }
+
+    public void setSellingPrice(double sellingPrice) {
         this.sellingPrice = sellingPrice;
-        this.isDirectPrice = isDirectPrice;
-        this.formulaId = formulaId;
-        this.dimensionUnit = dimensionUnit;
-        this.weightUnit = weightUnit;
-        this.isActive = isActive;
     }
 
-    public long getId() {
-        return id;
+    public double getMRP() {
+        return MRP;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setMRP(double MRP) {
+        this.MRP = MRP;
     }
 
-    public String getTradeCategory() {
+    public TradeCategory getTradeCategory() {
         return tradeCategory;
     }
 
-    public void setTradeCategory(String tradeCategory) {
+    public void setTradeCategory(TradeCategory tradeCategory) {
         this.tradeCategory = tradeCategory;
     }
 
-    public String getName() {
-        return name;
+    public boolean isListing() {
+        return listing;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public long getVeticalId() {
-        return veticalId;
-    }
-
-    public void setVeticalId(long veticalId) {
-        this.veticalId = veticalId;
+    public void setListing(boolean listing) {
+        this.listing = listing;
     }
 
     public Date getCreatedOn() {
@@ -145,86 +163,6 @@ public class Products {
 
     public void setModifiedOn(Date modifiedOn) {
         this.modifiedOn = modifiedOn;
-    }
-
-    public int getIdealWeight() {
-        return idealWeight;
-    }
-
-    public void setIdealWeight(int idealWeight) {
-        this.idealWeight = idealWeight;
-    }
-
-    public int getIdealLength() {
-        return idealLength;
-    }
-
-    public void setIdealLength(int idealLength) {
-        this.idealLength = idealLength;
-    }
-
-    public int getIdealBreadth() {
-        return idealBreadth;
-    }
-
-    public void setIdealBreadth(int idealBreadth) {
-        this.idealBreadth = idealBreadth;
-    }
-
-    public int getIdealWidth() {
-        return idealWidth;
-    }
-
-    public void setIdealWidth(int idealWidth) {
-        this.idealWidth = idealWidth;
-    }
-
-    public int getSellingPrice() {
-        return sellingPrice;
-    }
-
-    public void setSellingPrice(int sellingPrice) {
-        this.sellingPrice = sellingPrice;
-    }
-
-    public boolean isDirectPrice() {
-        return isDirectPrice;
-    }
-
-    public void setDirectPrice(boolean directPrice) {
-        isDirectPrice = directPrice;
-    }
-
-    public long getFormulaId() {
-        return formulaId;
-    }
-
-    public void setFormulaId(long formulaId) {
-        this.formulaId = formulaId;
-    }
-
-    public int getDimensionUnit() {
-        return dimensionUnit;
-    }
-
-    public void setDimensionUnit(int dimensionUnit) {
-        this.dimensionUnit = dimensionUnit;
-    }
-
-    public int getWeightUnit() {
-        return weightUnit;
-    }
-
-    public void setWeightUnit(int weightUnit) {
-        this.weightUnit = weightUnit;
-    }
-
-    public boolean isActive() {
-        return isActive;
-    }
-
-    public void setActive(boolean active) {
-        isActive = active;
     }
 }
 
