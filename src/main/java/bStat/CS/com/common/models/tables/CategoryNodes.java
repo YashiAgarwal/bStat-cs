@@ -9,7 +9,7 @@ import javax.persistence.*;
  */
     @Entity
     @Table(name = "hierarchy_nodes")
-    public class HierarchyNodes {
+    public class CategoryNodes {
 
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,10 +22,10 @@ import javax.persistence.*;
         @JsonProperty("description")
         private String description;
 
-        public HierarchyNodes() {
+        public CategoryNodes() {
         }
 
-        public HierarchyNodes(long nodeId, long productId, String description) {
+        public CategoryNodes(long nodeId, long productId, String description) {
             this.nodeId = nodeId;
             this.productId = productId;
             this.description = description;

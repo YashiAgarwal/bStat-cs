@@ -27,7 +27,7 @@ database:
   # the username
   user: root
   # the password
-  password:
+  password: GAneshjI
 
   # the JDBC URL
   url: jdbc:mysql://localhost:3306/bstat-cs-db
@@ -59,3 +59,8 @@ configParams:
   timeOut: 5000
   apiVersion: 1
   bucket: bstat-CS
+
+swagger:
+  host: localhost
+  port: 3000
+  resourcePackage: bStat.cs.com.resources

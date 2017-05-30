@@ -14,6 +14,9 @@ public class ProductsHierarchy {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private long id;
+
     @Column(name = "parent_node_id")
     private long parentNodeId;
 
@@ -24,7 +27,7 @@ public class ProductsHierarchy {
     private long groupId;
 
     @JsonProperty("node_type")
-    private long nodeType;
+    private long nodeType;      //TODO
 
     public ProductsHierarchy() {
     }

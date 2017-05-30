@@ -18,7 +18,7 @@ public class Products {
     private long id;
 
     @JsonProperty("trade_category")
-    private String tradeCategory;
+    private String tradeCategory;   //TODO
 
     @JsonProperty("name")
     private String name;
@@ -26,17 +26,8 @@ public class Products {
     @JsonProperty("description")
     private String description;
 
-    @JsonProperty("group_id")
-    private long groupId;
-
-    @JsonProperty("node_id")
-    private long nodeId;
-
-    @Column(name = "created_on")
-    private Date createdOn;
-
-    @Column(name = "modified_on")
-    private Date modifiedOn;
+    @JsonProperty("vertical_id")
+    private long veticalId;
 
     @JsonProperty("ideal_weight")
     private int idealWeight;
@@ -68,10 +59,16 @@ public class Products {
     @Column(name = "is_active")
     private boolean isActive;
 
+    @Column(name = "created_on")
+    private Date createdOn;
+
+    @Column(name = "modified_on")
+    private Date modifiedOn;
+
     public Products() {
     }
 
-    public Products(long id, String tradeCategory, String name, String description, long groupId, long nodeId,
+    public Products(long id, String tradeCategory, String name, String description, long groupId,
                     Date createdOn, Date modifiedOn, int idealWeight, int idealLength, int idealBreadth,
                     int idealWidth, int sellingPrice, boolean isDirectPrice, long formulaId, int dimensionUnit,
                     int weightUnit, boolean isActive) {
@@ -79,8 +76,7 @@ public class Products {
         this.tradeCategory = tradeCategory;
         this.name = name;
         this.description = description;
-        this.groupId = groupId;
-        this.nodeId = nodeId;
+        this.veticalId = groupId;
         this.createdOn = createdOn;
         this.modifiedOn = modifiedOn;
         this.idealWeight = idealWeight;
@@ -127,20 +123,12 @@ public class Products {
         this.description = description;
     }
 
-    public long getGroupId() {
-        return groupId;
+    public long getVeticalId() {
+        return veticalId;
     }
 
-    public void setGroupId(long groupId) {
-        this.groupId = groupId;
-    }
-
-    public long getNodeId() {
-        return nodeId;
-    }
-
-    public void setNodeId(long nodeId) {
-        this.nodeId = nodeId;
+    public void setVeticalId(long veticalId) {
+        this.veticalId = veticalId;
     }
 
     public Date getCreatedOn() {

@@ -31,8 +31,8 @@ public class CSApplication extends Application<CSConfiguration> {
         new CSApplication().run(args);
     }
 
-    private final HibernateBundle<CSConfiguration> hibernate = new HibernateBundle<CSConfiguration>(HierarchyNodes.class,
-            Products.class, ProductsGroup.class, ProductsHierarchy.class, ServiceItems.class) {
+    private final HibernateBundle<CSConfiguration> hibernate = new HibernateBundle<CSConfiguration>(CategoryNodes.class,
+            Products.class, ProductVerticals.class, ProductsHierarchy.class, ServiceItems.class) {
         @Override
         public DataSourceFactory getDataSourceFactory(CSConfiguration csConfiguration) {
             logger.info("Configuring database ...");
