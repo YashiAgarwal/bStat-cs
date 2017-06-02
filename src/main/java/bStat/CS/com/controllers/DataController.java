@@ -1,8 +1,14 @@
 package bStat.CS.com.controllers;
 
+import bStat.CS.com.FeedObjects.ProductAttributeDTO;
 import bStat.CS.com.FeedObjects.ProductDTO;
+import bStat.CS.com.FeedObjects.ServiceItemsDTO;
+import bStat.CS.com.common.dao.ProductAttributesDao;
 import bStat.CS.com.common.dao.ProductsDao;
+import bStat.CS.com.common.dao.ServiceItemsDao;
+import bStat.CS.com.common.models.tables.ProductAttributes;
 import bStat.CS.com.common.models.tables.Products;
+import bStat.CS.com.common.models.tables.ServiceItems;
 import bStat.CS.com.resources.DataResource;
 import com.google.inject.Inject;
 import org.slf4j.Logger;
@@ -18,6 +24,12 @@ public class DataController {
     @Inject
     ProductsDao productsDao;
 
+    @Inject
+    ServiceItemsDao serviceItemsDao;
+
+    @Inject
+    ProductAttributesDao productAttributesDao;
+
     private static final Logger logger = LoggerFactory.getLogger(DataController.class);
 
 
@@ -27,5 +39,19 @@ public class DataController {
                 productDTO.getMRP(), productDTO.getTradeCategory(), true, new Date(System.currentTimeMillis()),
                 new Date(System.currentTimeMillis()));
         productsDao.saveInDB(products);
+    }
+
+    public void addNewServiceItems(ServiceItemsDTO serviceItemsDTO){
+        ServiceItems serviceItems = new ServiceItems(serviceItemsDTO.getProductId(), serviceItemsDTO.getDescription(),
+                serviceItemsDTO.getTitle(), serviceItemsDTO.getServiceType(), serviceItemsDTO.getPriceForFreeService(),
+                serviceItemsDTO.getCustomerId(), new Date(System.currentTimeMillis()), new Date(System.currentTimeMillis()),
+                serviceItemsDTO.getCountOfFreeServices(), serviceItemsDTO.getPeriodOfService(), serviceItemsDTO.getPriceForPaidService());
+        serviceItemsDao.saveInDB(serviceItems);
+    }
+
+    public void addNewProductAttribute(ProductAttributeDTO productAttributeDTO){
+        ProductAttributes productAttributes = new ProductAttributes(productAttributeDTO.getProductId(),
+                productAttributeDTO.getAttributeKey(), productAttributeDTO.getAttributeValue());
+        productAttributesDao.saveInDB(productAttributes);
     }
 }

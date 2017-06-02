@@ -26,8 +26,7 @@ public class ProductAttributes {
     public ProductAttributes() {
     }
 
-    public ProductAttributes(long id, long productId, String attributeKey, String attributeValue) {
-        this.id = id;
+    public ProductAttributes(long productId, String attributeKey, String attributeValue) {
         this.productId = productId;
         this.attributeKey = attributeKey;
         this.attributeValue = attributeValue;
