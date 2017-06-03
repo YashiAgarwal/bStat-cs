@@ -1,7 +1,5 @@
 package bStat.CS.com.resources;
 
-
-
 import bStat.CS.com.FeedObjects.ProductAttributeDTO;
 import bStat.CS.com.FeedObjects.ProductDTO;
 import bStat.CS.com.FeedObjects.ServiceItemsDTO;
@@ -17,7 +15,6 @@ import bStat.CS.com.common.models.tables.ServiceItems;
 import bStat.CS.com.controllers.DataController;
 import com.codahale.metrics.annotation.ExceptionMetered;
 import com.codahale.metrics.annotation.Timed;
-import com.google.gson.Gson;
 import com.google.inject.Inject;
 import com.wordnik.swagger.annotations.Api;
 import com.wordnik.swagger.annotations.ApiOperation;
@@ -55,9 +52,6 @@ public class DataResource {
 
     @Inject
     ProductAttributesDao productAttributesDao;
-
-
-
 
     @Inject
     private AddRequestValidators addRequestValidators;

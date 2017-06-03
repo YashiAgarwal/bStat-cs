@@ -3,9 +3,7 @@ package bStat.CS.com.controllers;
 import bStat.CS.com.FeedObjects.ProductAttributeDTO;
 import bStat.CS.com.FeedObjects.ProductDTO;
 import bStat.CS.com.FeedObjects.ServiceItemsDTO;
-import bStat.CS.com.common.dao.ProductAttributesDao;
-import bStat.CS.com.common.dao.ProductsDao;
-import bStat.CS.com.common.dao.ServiceItemsDao;
+import bStat.CS.com.common.dao.*;
 import bStat.CS.com.common.models.tables.ProductAttributes;
 import bStat.CS.com.common.models.tables.Products;
 import bStat.CS.com.common.models.tables.ServiceItems;
@@ -22,15 +20,30 @@ import java.util.Date;
 public class DataController {
 
     @Inject
+    HierarchyNodesDao hierarchyNodesDao;
+    @Inject
+    ProductAttributesDao productAttributesDao;
+    @Inject
     ProductsDao productsDao;
-
+    @Inject
+    ProductsGroupDao productsGroupDao;
+    @Inject
+    ProductsHierarchyDao productsHierarchyDao;
     @Inject
     ServiceItemsDao serviceItemsDao;
 
-    @Inject
-    ProductAttributesDao productAttributesDao;
-
     private static final Logger logger = LoggerFactory.getLogger(DataController.class);
+
+    @Inject
+    public DataController(HierarchyNodesDao hierarchyNodesDao, ProductAttributesDao productAttributesDao, ProductsDao productsDao,
+                          ProductsGroupDao productsGroupDao, ProductsHierarchyDao productsHierarchyDao, ServiceItemsDao serviceItemsDao) {
+        this.hierarchyNodesDao = hierarchyNodesDao;
+        this.productAttributesDao = productAttributesDao;
+        this.productsDao = productsDao;
+        this.productsGroupDao = productsGroupDao;
+        this.productsHierarchyDao = productsHierarchyDao;
+        this.serviceItemsDao = serviceItemsDao;
+    }
 
 
     public void addNewProduct(ProductDTO productDTO) {

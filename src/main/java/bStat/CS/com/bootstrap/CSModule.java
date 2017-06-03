@@ -1,8 +1,13 @@
 package bStat.CS.com.bootstrap;
 
+import bStat.CS.com.Validators.AddRequestValidators;
+import bStat.CS.com.common.dao.*;
 import bStat.CS.com.config.CSConfiguration;
+import bStat.CS.com.controllers.DataController;
 import com.codahale.metrics.MetricRegistry;
 import com.google.inject.AbstractModule;
+import com.google.inject.Provides;
+import com.google.inject.Singleton;
 import io.dropwizard.hibernate.HibernateBundle;
 import org.hibernate.SessionFactory;
 
@@ -39,4 +44,18 @@ public class CSModule extends AbstractModule {
         buckets.add(this.config.getConfigParams().getBucket());
     }
 
+    @Provides
+    @Singleton
+    public DataController provideStoresController(HierarchyNodesDao hierarchyNodesDao, ProductAttributesDao productAttributesDao,
+                                                  ProductsDao productsDao, ProductsGroupDao productsGroupDao,
+                                                  ProductsHierarchyDao productsHierarchyDao, ServiceItemsDao serviceItemsDao) {
+        return new DataController(hierarchyNodesDao, productAttributesDao, productsDao, productsGroupDao,
+                productsHierarchyDao, serviceItemsDao);
+    }
+
+    @Provides
+    @Singleton
+    public AddRequestValidators provideAddRequestValidators(ProductsDao productsDao) {
+        return new AddRequestValidators(productsDao);
+    }
 }
