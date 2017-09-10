@@ -1,7 +1,6 @@
 package bStat.CS.com.common.models.tables;
 
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 
@@ -9,8 +8,9 @@ import javax.persistence.*;
  * Created by Yashi Agarwal on 30-05-2017.
  */
 @Entity
-@Data
-@NoArgsConstructor
+@Getter
+@Setter
+@AllArgsConstructor
 @Table(name = "product_attributes")
 public class ProductAttributes {
 

@@ -2,9 +2,7 @@ package bStat.CS.com.common.models.tables;
 
 import bStat.CS.com.common.enums.TradeCategory;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -13,8 +11,9 @@ import java.util.Date;
  * Created by Yashi Agarwal on 19-05-2017.
  */
 @Entity
-@Data
-@NoArgsConstructor
+@Getter
+@Setter
+@AllArgsConstructor
 @Table(name = "products")
 public class Products {
 

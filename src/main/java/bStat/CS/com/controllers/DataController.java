@@ -50,9 +50,8 @@ public class DataController {
 
     public void addNewProduct(ProductDTO productDTO) {
         Products products = new Products(productDTO.getTitle(), productDTO.getCategoryId(), productDTO.getCategoryChildId(),
-                productDTO.getVerticalId(), productDTO.getImageUrl(), productDTO.getWarrantyPeriod(), productDTO.getSellingPrice(),
-                productDTO.getMRP(), productDTO.getTradeCategory(), true, new Date(System.currentTimeMillis()),
-                new Date(System.currentTimeMillis()));
+                productDTO.getVerticalId(), productDTO.getImageUrl(), productDTO.getWarrantyPeriod(), productDTO.getTradeCategory(),
+                productDTO.isListing(), new Date(System.currentTimeMillis()), productDTO.getVariationParameter(), productDTO.isConcrete());
         productsDao.saveInDB(products);
     }
 

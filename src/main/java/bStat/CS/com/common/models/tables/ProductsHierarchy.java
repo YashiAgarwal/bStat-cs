@@ -2,8 +2,7 @@ package bStat.CS.com.common.models.tables;
 
 import bStat.CS.com.common.enums.NodeType;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 
@@ -12,8 +11,9 @@ import javax.persistence.*;
  */
 
 @Entity
-@Data
-@NoArgsConstructor
+@Getter
+@Setter
+@AllArgsConstructor
 @Table(name = "products_hierarchy")
 public class ProductsHierarchy {
 

@@ -1,8 +1,7 @@
 package bStat.CS.com.common.models.tables;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 
@@ -10,8 +9,9 @@ import javax.persistence.*;
  * Created by Yashi Agarwal on 19-05-2017.
  */
 @Entity
-@Data
-@NoArgsConstructor
+@Getter
+@Setter
+@AllArgsConstructor
 @Table(name = "product_verticals")
 public class ProductVerticals {
 
