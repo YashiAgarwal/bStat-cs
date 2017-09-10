@@ -1,6 +1,8 @@
 package bStat.CS.com.common.models.tables;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
@@ -8,50 +10,26 @@ import javax.persistence.*;
  * Created by Yashi Agarwal on 19-05-2017.
  */
     @Entity
+    @Data
+    @NoArgsConstructor
     @Table(name = "hierarchy_nodes")
     public class CategoryNodes {
 
         @Id
-        @GeneratedValue(strategy = GenerationType.IDENTITY)
         @Column(name = "node_id")
-        private long nodeId;
+        private String nodeId;
 
-        @JsonProperty("product_id")
-        private long productId;
+        @Column(name = "node_name")
+        private String nodeName;
 
-        @JsonProperty("description")
+        @Column(name = "node_meta_data")
+        private String nodeMetaData;
+
+        @Column(name = "product_id")  //in case node is a product itself
+        private String productId;
+
+        @Column(name = "description")
         private String description;
 
-        public CategoryNodes() {
-        }
 
-        public CategoryNodes(long nodeId, long productId, String description) {
-            this.nodeId = nodeId;
-            this.productId = productId;
-            this.description = description;
-        }
-
-        public long getNodeId() {
-            return nodeId;
-        }
-
-        public void setNodeId(long nodeId) {
-            this.nodeId = nodeId;
-        }
-
-        public long getProductId() {
-            return productId;
-        }
-
-        public void setProductId(long productId) {
-            this.productId = productId;
-        }
-
-        public String getDescription() {
-            return description;
-        }
-
-        public void setDescription(String description) {
-            this.description = description;
-        }
     }
