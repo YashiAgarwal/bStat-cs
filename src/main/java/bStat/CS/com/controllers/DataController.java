@@ -3,7 +3,6 @@ package bStat.CS.com.controllers;
 import bStat.CS.com.FeedObjects.*;
 import bStat.CS.com.common.dao.*;
 import bStat.CS.com.common.models.tables.*;
-import bStat.CS.com.resources.DataResource;
 import com.google.inject.Inject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,6 +13,9 @@ import java.util.Date;
  * Created by Yashi Agarwal on 31-05-2017.
  */
 public class DataController {
+
+    @Inject
+    HierarchyNodesDao hierarchyNodesDao;
 
     @Inject
     ProductsDao productsDao;
@@ -34,6 +36,16 @@ public class DataController {
     ProductsHierarchyDao productsHierarchyDao;
 
     private static final Logger logger = LoggerFactory.getLogger(DataController.class);
+
+    @Inject
+    public DataController(HierarchyNodesDao hierarchyNodesDao, ProductAttributesDao productAttributesDao, ProductsDao productsDao,
+                          ProductsHierarchyDao productsHierarchyDao, ServiceItemsDao serviceItemsDao) {
+        this.hierarchyNodesDao = hierarchyNodesDao;
+        this.productAttributesDao = productAttributesDao;
+        this.productsDao = productsDao;
+        this.productsHierarchyDao = productsHierarchyDao;
+        this.serviceItemsDao = serviceItemsDao;
+    }
 
 
     public void addNewProduct(ProductDTO productDTO) {

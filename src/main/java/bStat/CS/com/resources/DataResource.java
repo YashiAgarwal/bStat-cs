@@ -11,7 +11,6 @@ import bStat.CS.com.common.models.tables.*;
 import bStat.CS.com.controllers.DataController;
 import com.codahale.metrics.annotation.ExceptionMetered;
 import com.codahale.metrics.annotation.Timed;
-import com.google.gson.Gson;
 import com.google.inject.Inject;
 import com.wordnik.swagger.annotations.Api;
 import com.wordnik.swagger.annotations.ApiOperation;
