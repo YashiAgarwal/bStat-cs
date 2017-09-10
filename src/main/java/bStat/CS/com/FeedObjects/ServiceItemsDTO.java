@@ -1,19 +1,13 @@
 package bStat.CS.com.FeedObjects;
 
 import bStat.CS.com.common.enums.ServiceType;
-import com.fasterxml.jackson.annotation.JsonProperty;
-
-import javax.persistence.Column;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import java.util.Date;
 
 /**
  * Created by Yashi Agarwal on 02-06-2017.
  */
 public class ServiceItemsDTO {
 
-    private long productId;
+    private String productId;
 
     private String description;
 
@@ -23,7 +17,7 @@ public class ServiceItemsDTO {
 
     private double priceForFreeService;
 
-    private long customerId;
+    private String customerId;
 
     private int countOfFreeServices;
 
@@ -31,11 +25,11 @@ public class ServiceItemsDTO {
 
     private double priceForPaidService;
 
-    public long getProductId() {
+    public String getProductId() {
         return productId;
     }
 
-    public void setProductId(long productId) {
+    public void setProductId(String productId) {
         this.productId = productId;
     }
 
@@ -71,11 +65,11 @@ public class ServiceItemsDTO {
         this.priceForFreeService = priceForFreeService;
     }
 
-    public long getCustomerId() {
+    public String getCustomerId() {
         return customerId;
     }
 
-    public void setCustomerId(long customerId) {
+    public void setCustomerId(String customerId) {
         this.customerId = customerId;
     }
 

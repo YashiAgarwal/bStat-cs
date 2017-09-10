@@ -1,23 +1,21 @@
 package bStat.CS.com.FeedObjects;
 
-import javax.persistence.Column;
-
 /**
  * Created by Yashi Agarwal on 02-06-2017.
  */
 public class ProductAttributeDTO {
 
-    private long productId;
+    private String productId;
 
     private String attributeKey;
 
     private String attributeValue;
 
-    public long getProductId() {
+    public String getProductId() {
         return productId;
     }
 
-    public void setProductId(long productId) {
+    public void setProductId(String productId) {
         this.productId = productId;
     }
 

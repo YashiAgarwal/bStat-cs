@@ -1,25 +1,21 @@
 package bStat.CS.com.FeedObjects;
 
 import bStat.CS.com.common.enums.TradeCategory;
-import com.fasterxml.jackson.annotation.JsonProperty;
-
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import lombok.Data;
 
 /**
  * Created by Yashi Agarwal on 31-05-2017.
  */
+@Data
 public class ProductDTO {
 
     private String title;
 
-    private long categoryId;
+    private String categoryId;
 
-    private long categoryChildId;
+    private String categoryChildId;
 
-    private long verticalId;
+    private String verticalId;
 
     private String imageUrl;
 
@@ -39,27 +35,27 @@ public class ProductDTO {
         this.title = title;
     }
 
-    public long getCategoryId() {
+    public String getCategoryId() {
         return categoryId;
     }
 
-    public void setCategoryId(long categoryId) {
+    public void setCategoryId(String categoryId) {
         this.categoryId = categoryId;
     }
 
-    public long getCategoryChildId() {
+    public String getCategoryChildId() {
         return categoryChildId;
     }
 
-    public void setCategoryChildId(long categoryChildId) {
+    public void setCategoryChildId(String categoryChildId) {
         this.categoryChildId = categoryChildId;
     }
 
-    public long getVerticalId() {
+    public String getVerticalId() {
         return verticalId;
     }
 
-    public void setVerticalId(long verticalId) {
+    public void setVerticalId(String verticalId) {
         this.verticalId = verticalId;
     }
 
