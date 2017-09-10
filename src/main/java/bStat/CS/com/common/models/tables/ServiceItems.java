@@ -2,8 +2,7 @@ package bStat.CS.com.common.models.tables;
 
 import bStat.CS.com.common.enums.ServiceType;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -12,8 +11,9 @@ import java.util.Date;
  * Created by Yashi Agarwal on 23-05-2017.
  */
  @Entity
- @Data
- @NoArgsConstructor
+ @Getter
+ @Setter
+ @AllArgsConstructor
  @Table(name = "service_items")
  public class ServiceItems {
 
