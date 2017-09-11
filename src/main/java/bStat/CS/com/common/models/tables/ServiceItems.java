@@ -37,9 +37,6 @@ import java.util.Date;
     @Column(name = "price_for_free_service")
     private double priceForFreeService;
 
-    @Column(name = "customer_id")
-    private String customerId;
-
     @Column(name = "created_on")
     private Date createdOn;
 

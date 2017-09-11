@@ -19,7 +19,7 @@ public class Products {
 
     @Id
     @Column(name = "product_id")
-    private String productId;
+    private String productId;       //Starts with PR
 
     @Column(name = "title")
     private String title;
@@ -47,7 +47,7 @@ public class Products {
     private Date createdOn;
 
     @Column(name = "variation_parameter")
-    private Object variationParameter;
+    private String variationParameter;
 
     @Column(name = "is_concrete")
     private boolean isConcrete;     // will be true if product has no variation

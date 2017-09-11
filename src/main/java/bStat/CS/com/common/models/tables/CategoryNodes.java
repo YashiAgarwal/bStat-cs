@@ -12,7 +12,7 @@ import javax.persistence.*;
 @Getter
 @Setter
 @AllArgsConstructor
-@Table(name = "hierarchy_nodes")
+@Table(name = "category_nodes")
 public class CategoryNodes {
 
     @Id

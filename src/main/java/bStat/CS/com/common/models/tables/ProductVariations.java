@@ -32,8 +32,4 @@ public class ProductVariations {
 
     @Column(name = "selling_price")
     private double sellingPrice;
-    
-
-    
-
 }

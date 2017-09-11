@@ -35,7 +35,7 @@ public class ProductDTO {
 
     private boolean listing;    // active or inactive
 
-    private Object variationParameter;
+    private String variationParameter;
 
     private boolean isConcrete;
 }

@@ -11,7 +11,7 @@ public class ProductHierarchyDTO {
 
     private String childNodeId;
 
-    private String verticalId;
+    private String groupId;
 
     private NodeType nodeType;
 
@@ -31,12 +31,12 @@ public class ProductHierarchyDTO {
         this.childNodeId = childNodeId;
     }
 
-    public String getVerticalId() {
-        return verticalId;
+    public String getGroupId() {
+        return groupId;
     }
 
-    public void setVerticalId(String verticalId) {
-        this.verticalId = verticalId;
+    public void setGroupId(String groupId) {
+        this.groupId = groupId;
     }
 
     public NodeType getNodeType() {

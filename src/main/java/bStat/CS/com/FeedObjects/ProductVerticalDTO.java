@@ -1,38 +1,26 @@
 package bStat.CS.com.FeedObjects;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
+
+import javax.persistence.Column;
 
 /**
  * Created by Yashi Agarwal on 05-06-2017.
  */
+@Getter
+@Setter
+@AllArgsConstructor
 public class ProductVerticalDTO {
+    private String verticalId;
+
     private long startCategoryNode;
 
     private String verticalName;
 
     private String description;
 
-    public long getStartCategoryNode() {
-        return startCategoryNode;
-    }
-
-    public void setStartCategoryNode(long startCategoryNode) {
-        this.startCategoryNode = startCategoryNode;
-    }
-
-    public String getVerticalName() {
-        return verticalName;
-    }
-
-    public void setVerticalName(String verticalName) {
-        this.verticalName = verticalName;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
+    private String groupId;
 }

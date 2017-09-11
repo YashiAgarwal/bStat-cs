@@ -10,12 +10,12 @@ import org.slf4j.LoggerFactory;
 /**
  * Created by Yashi Agarwal on 19-05-2017.
  */
-public class ProductsGroupDao extends AbstractDAO<ProductVerticals> {
+public class ProductsVerticalsDao extends AbstractDAO<ProductVerticals> {
 
-    private static final Logger logger = LoggerFactory.getLogger(ProductsGroupDao.class);
+    private static final Logger logger = LoggerFactory.getLogger(ProductsVerticalsDao.class);
 
     @Inject
-    public ProductsGroupDao(HibernateBundle bundle) {
+    public ProductsVerticalsDao(HibernateBundle bundle) {
         super(bundle.getSessionFactory());
     }
 
