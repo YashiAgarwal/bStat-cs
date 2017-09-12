@@ -4,6 +4,7 @@ import bStat.CS.com.Validators.AddRequestValidators;
 import bStat.CS.com.common.dao.*;
 import bStat.CS.com.config.CSConfiguration;
 import bStat.CS.com.controllers.DataController;
+import bStat.CS.com.utils.Utilities;
 import com.codahale.metrics.MetricRegistry;
 import com.google.inject.AbstractModule;
 import com.google.inject.Provides;
@@ -47,10 +48,11 @@ public class CSModule extends AbstractModule {
     @Provides
     @Singleton
     public DataController provideStoresController(HierarchyNodesDao hierarchyNodesDao, ProductAttributesDao productAttributesDao,
-                                                  ProductsDao productsDao, ProductsGroupDao productsGroupDao,
-                                                  ProductsHierarchyDao productsHierarchyDao, ServiceItemsDao serviceItemsDao) {
-        return new DataController(hierarchyNodesDao, productAttributesDao, productsDao, productsGroupDao,
-                productsHierarchyDao, serviceItemsDao);
+                                                  ProductsDao productsDao, ProductsVerticalsDao productsVerticalsDao,
+                                                  ProductsHierarchyDao productsHierarchyDao, ServiceItemsDao serviceItemsDao,
+                                                  Utilities utilities) {
+        return new DataController(hierarchyNodesDao, productAttributesDao, productsDao, productsHierarchyDao,
+                serviceItemsDao, utilities);
     }
 
     @Provides

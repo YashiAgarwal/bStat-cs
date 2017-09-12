@@ -63,7 +63,6 @@ public class DataResource {
 
     @POST
     @Path("/new/product")
-    @Produces(MediaType.APPLICATION_JSON)
     @UnitOfWork
     @Timed
     @ExceptionMetered
@@ -82,7 +81,6 @@ public class DataResource {
 
     @GET
     @Path("/del/product")
-    @Produces(MediaType.APPLICATION_JSON)
     @UnitOfWork
     @Timed
     @ExceptionMetered
@@ -103,7 +101,6 @@ public class DataResource {
 
     @GET
     @Path("/products")
-    @Produces(MediaType.APPLICATION_JSON)
     @UnitOfWork
     @Timed
     @ExceptionMetered
@@ -119,8 +116,7 @@ public class DataResource {
 
     //Add service items
     @POST
-    @Path("/new/serviceItems")
-    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/new/service_items")
     @UnitOfWork
     @Timed
     @ExceptionMetered
@@ -138,8 +134,7 @@ public class DataResource {
 
     //Delete a service item
     @GET
-    @Path("/del/service item")
-    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/del/service_item")
     @UnitOfWork
     @Timed
     @ExceptionMetered
@@ -156,8 +151,7 @@ public class DataResource {
 
     //Get all service items
     @GET
-    @Path("/service items")
-    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/service_items")
     @UnitOfWork
     @Timed
     @ExceptionMetered
@@ -173,8 +167,7 @@ public class DataResource {
 
     //Add product attribute
     @POST
-    @Path("/new/product attribute")
-    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/new/product_attribute")
     @UnitOfWork
     @Timed
     @ExceptionMetered
@@ -192,8 +185,7 @@ public class DataResource {
 
     //Delete a product attribute
     @GET
-    @Path("/del/product attribute")
-    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/del/product_attribute")
     @UnitOfWork
     @Timed
     @ExceptionMetered
@@ -210,8 +202,7 @@ public class DataResource {
 
     //Get all product attributes
     @GET
-    @Path("/product attributes")
-    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/product_attributes")
     @UnitOfWork
     @Timed
     @ExceptionMetered
@@ -227,8 +218,7 @@ public class DataResource {
 
     //Add product vertical
     @POST
-    @Path("/new/product vertical")
-    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/new/product_vertical")
     @UnitOfWork
     @Timed
     @ExceptionMetered
@@ -246,8 +236,7 @@ public class DataResource {
 
     //Delete a product vertical
     @GET
-    @Path("/del/product vertical")
-    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/del/product_vertical")
     @UnitOfWork
     @Timed
     @ExceptionMetered
@@ -264,8 +253,7 @@ public class DataResource {
 
     //Get all product verticals
     @GET
-    @Path("/product verticals")
-    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/product_verticals")
     @UnitOfWork
     @Timed
     @ExceptionMetered
@@ -281,8 +269,7 @@ public class DataResource {
 
     //Add category node
     @POST
-    @Path("/new/category node")
-    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/new/category_node")
     @UnitOfWork
     @Timed
     @ExceptionMetered
@@ -300,8 +287,7 @@ public class DataResource {
 
     //Delete a category node
     @GET
-    @Path("/del/category node")
-    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/del/category_node")
     @UnitOfWork
     @Timed
     @ExceptionMetered
@@ -318,8 +304,7 @@ public class DataResource {
 
     //Get all category nodes
     @GET
-    @Path("/category nodes")
-    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/category_nodes")
     @UnitOfWork
     @Timed
     @ExceptionMetered
@@ -335,8 +320,7 @@ public class DataResource {
 
     //Add product hierarchy
     @POST
-    @Path("/new/product hierarchy")
-    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/new/product_hierarchy")
     @UnitOfWork
     @Timed
     @ExceptionMetered
@@ -355,8 +339,7 @@ public class DataResource {
 
     //Delete a product hierarchy
     @GET
-    @Path("/del/product hierarchy")
-    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/del/product_hierarchy")
     @UnitOfWork
     @Timed
     @ExceptionMetered
@@ -373,8 +356,7 @@ public class DataResource {
 
     //Get all product hierarchies
     @GET
-    @Path("/product hierarchy")
-    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/product_hierarchy")
     @UnitOfWork
     @Timed
     @ExceptionMetered
