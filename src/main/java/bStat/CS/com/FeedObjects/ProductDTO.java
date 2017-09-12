@@ -1,6 +1,9 @@
 package bStat.CS.com.FeedObjects;
 
 import bStat.CS.com.common.enums.TradeCategory;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
@@ -13,6 +16,7 @@ import java.util.Date;
  */
 @Getter
 @Setter
+@AllArgsConstructor
 public class ProductDTO {
 
     private String title;
@@ -38,4 +42,12 @@ public class ProductDTO {
     private String variationParameter;
 
     private boolean isConcrete;
+
+    public static void main(String[] args) throws JsonProcessingException {
+        ProductDTO productDTO = new ProductDTO("Maggi", "CA1234", "CAC2345",
+                "V123", "imageurl.com", "1 year" , 10.12, 15.0, TradeCategory.TRADED,
+                true, "VP12", true);
+        String s = new ObjectMapper().writeValueAsString(productDTO);
+        System.out.println(s);
+    }
 }
