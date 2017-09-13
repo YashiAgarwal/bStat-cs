@@ -14,6 +14,7 @@ import javax.persistence.Table;
 @Getter
 @Setter
 @AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "product_variations")
 public class ProductVariations {
 

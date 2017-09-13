@@ -79,13 +79,13 @@ public class DataResource {
     }
 
 
-    @GET
+    @POST
     @Path("/del/product")
     @UnitOfWork
     @Timed
     @ExceptionMetered
     @ApiOperation(value = "deleteProduct")
-    public void deleteProduct(@QueryParam("productId") long productId) throws ApiException {
+    public void deleteProduct(@QueryParam("productId") String productId) throws ApiException {
         try {
             productsDao.markProductInactive(productId);
         } catch (ApiException ae) {

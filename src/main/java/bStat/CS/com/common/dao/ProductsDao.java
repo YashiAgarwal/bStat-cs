@@ -59,9 +59,9 @@ public class ProductsDao extends AbstractDAO<Products> {
         currentSession().update(products);
     }
 
-    public void markProductInactive(long productId) throws ApiException {
+    public void markProductInactive(String productId) throws ApiException {
         Criteria cr = currentSession().createCriteria(Products.class);
-        cr.add(Restrictions.eq("product_id", productId));
+        cr.add(Restrictions.eq("productId", productId));
         List<Products> productList = cr.list();
         if(productList != null && productList.size() > 0) {
             Products product = productList.get(0);

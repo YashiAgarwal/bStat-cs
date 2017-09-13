@@ -3,10 +3,7 @@ package bStat.CS.com.FeedObjects;
 import bStat.CS.com.common.enums.TradeCategory;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.Column;
 import java.util.Date;
@@ -17,6 +14,8 @@ import java.util.Date;
 @Getter
 @Setter
 @AllArgsConstructor
+@NoArgsConstructor
+@Data
 public class ProductDTO {
 
     private String title;

@@ -14,6 +14,7 @@ import javax.persistence.*;
 @Getter
 @Setter
 @AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "products_hierarchy")
 public class ProductsHierarchy {
 

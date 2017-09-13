@@ -12,6 +12,7 @@ import javax.persistence.*;
 @Getter
 @Setter
 @AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "category_nodes")
 public class CategoryNodes {
 

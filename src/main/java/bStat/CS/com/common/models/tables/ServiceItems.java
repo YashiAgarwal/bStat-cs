@@ -14,6 +14,7 @@ import java.util.Date;
  @Getter
  @Setter
  @AllArgsConstructor
+ @NoArgsConstructor
  @Table(name = "service_items")
  public class ServiceItems {
 

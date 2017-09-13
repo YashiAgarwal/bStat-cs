@@ -12,6 +12,7 @@ import javax.persistence.*;
 @Getter
 @Setter
 @AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "product_verticals")
 public class ProductVerticals {
 
